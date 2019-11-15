@@ -1,0 +1,25 @@
+{
+  "name": "react-native-text-size",
+  "version": "1.0.0",
+  "description": "React native module to get text width and height",
+  "files": [
+    "android",
+    "ios",
+    "index.js",
+    "react-native-text-size.podspec"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teamta/react-native-text-size.git"
+  },
+  "author": "Travancore Analytics",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teamta/react-native-text-size/issues"
+  },
+  "homepage": "https://github.com/teamta/react-native-text-size#readme"
+}
