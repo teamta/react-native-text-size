@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.authors      = package['author']
   s.homepage     = package['homepage']
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
 
   s.source       = { :git => "git+https://github.com/teamta/react-native-text-size.git", :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m}"

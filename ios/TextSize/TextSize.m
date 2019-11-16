@@ -44,28 +44,24 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(calculateSize:(NSString *) text fontName:(NSString *) fontName fontSize:(float ) fontSize resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_main_queue(), ^{
+
+
         UILabel *textLabel = [[UILabel alloc]init];
         textLabel.text = text;
+        textLabel.numberOfLines = 0;
         [textLabel setFont:[UIFont fontWithName:fontName size:(CGFloat)fontSize]];
+        [textLabel sizeToFit];
         
-        NSNumber* width =  [NSNumber numberWithFloat:textLabel.intrinsicContentSize.width];
-        NSNumber* height =  [NSNumber numberWithFloat:textLabel.intrinsicContentSize.height];
-        NSDictionary *size = [[NSDictionary alloc]initWithObjectsAndKeys:@"width",width,@"height",height,nil];
+        NSNumber* width    =  [NSNumber numberWithFloat:textLabel.intrinsicContentSize.width];
+        NSNumber* height   =  [NSNumber numberWithFloat:textLabel.intrinsicContentSize.height];
+        NSDictionary* size =  [[NSDictionary alloc] initWithObjectsAndKeys:width,@"width",height,@"height",nil];
         
-        resolve(size);
+        resolve( size);
     });
-    
-    
-    
 }
+
 - (NSArray<NSString *> *)supportedEvents
 {
     return @[];
 }
-
-- (NSDictionary *)constantsToExport
-{
-    return @{  };
-}
-
 @end
